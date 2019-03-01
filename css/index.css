@@ -1,0 +1,229 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+
+body{
+    background-image:url(./img/b.jpeg);
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+  margin: 0;
+  padding: 0;
+}
+button{
+    cursor: pointer;
+}
+ul li, a{
+    text-decoration: none;
+    list-style: none;
+    /* display: inline; */
+    float: left;
+  }
+  ul li{
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/* ========================================================= NAV BAR ================================== */
+    .navbar{
+        width: 100%;
+        border-radius: 3px;
+        height: 50px;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+    }
+    .icon{
+        margin-left: 30px;
+      }
+      .logo{
+        color: rgb(33, 90, 71);
+        float: left;
+      height: 50px;
+      padding-top: 40px;
+        font-weight: 800;
+      font-size: 28pt;
+      line-height: 20px;
+      font-family: 'Yatra One', cursive;
+    }
+    .brand{
+        color: rgb(87, 126, 14);
+        font-size: 17pt;
+        font-weight: 400;
+        font-family: 'Yatra One', cursive;
+    }
+/* ========================================================= BODY ================================== */
+.container{
+    width: 80%;
+    margin: auto;
+}
+#overall{
+    margin-top:70px;
+    background-color: rgba(0, 0 ,0 , 0.9);
+    margin-top: 130px;
+}
+/* ========================================================= SIGN IN ================================== */
+.control{
+    padding: 10px;
+    width: 50%;
+    padding-bottom: 67px;
+    margin: auto;
+    
+}
+.form-control{
+    width:50%;
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.hfo{
+    color: rgb(222, 247, 174);
+    font-weight: 300;
+    text-align: center;
+    padding-top:10px;
+    margin-bottom: 10px; 
+}
+/* ========================================================= FORM (LABELS & INPUTS) ================================== */
+.form-label{
+    font-weight: 500;
+    font-size: 15pt; 
+    color: rgb(222, 247, 174);
+    margin:0;
+}
+.form-input{
+    width: 100%;
+    /* height: 20px; */
+    color: white;
+    /* border-radius: 12px; */
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid white;
+    background: transparent;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 15pt;    
+    padding: 4px;
+    text-align: center;
+}
+
+.btn{
+    width: 100%;
+    font-weight: 700;
+    font-size: 15pt;
+    border-radius: 7px;
+    height: 37px;
+    padding: 10px;    
+    background-color: transparent;
+    border-style: solid;
+    border-color: rgb(33, 90, 71);
+    color: white;
+    outline: none;
+}
+.btn-space{
+    width: 70%;
+    margin-left: 12%;
+}
+.btn:hover{
+    background-color: rgb(33, 90, 71);
+    outline: 0;
+    border-style: none;
+}
+#btn-signup:hover{
+    cursor: pointer;
+ }
+ 
+ #btn-reset{
+     cursor: pointer;
+ }
+ .btn-link{
+    font-size: 14pt;
+  font-weight: 400;
+    background: transparent;
+    border: none;
+    outline: 0;
+    color: rgb(73, 138, 73);
+    display: inline;
+}
+/* ========================================================= SIGN UP ================================== */
+#signup{
+    display: none;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 6px;
+}
+.form-input-md{
+    width: 90%;
+    /* height: 20px; */
+    color: white;
+    /* border-radius: 12px; */
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid white;
+    background: transparent;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15pt;    
+    padding: 4px;
+    margin-right: 10px;
+    text-align: center;
+}
+.form-label-md{
+    font-weight: 500;
+    font-size: 15pt; 
+    color: rgb(222, 247, 174);
+    margin:0;
+    width: 100%;
+}
+/* ========================================================= CHANGE PASSWORD ================================== */
+
+#reset-modal{
+    width: 40%;
+    display: none;  
+    border-radius: 20px;
+    background-color: rgb(33, 90, 71);
+    position: fixed;
+    top: 145px;   
+    z-index: 1;
+    padding: 37px 30px 30px 70px;
+    margin-left: 25%;
+    margin-top: 5px;
+    font-size: 14pt;
+}
+#btn-change-password{
+    width: 90%;
+    font-weight: 700;
+    font-size: 15pt;
+    border-radius: 7px;
+    height: 37px;
+    padding: 8px;
+    background-color:rgba(0,0 ,0 , 0.4);
+    border-style: solid;
+    border-color: rgba(0,0 ,0 , 0.5);
+    color: white;
+}
+#btn-change-password:hover, .search:hover{
+    background-color: rgba(0,0 ,0 , 0.8);
+    outline: 0;
+    border-style: none;
+}
+.search{
+    border-style: solid;
+    border-color:  rgba(0,0 ,0 , 0.5);
+    border-radius: 360px;
+    width: 70px;
+    height: 30px;
+    outline: 0;
+    background: rgba(0,0 ,0 , 0.4);
+    color: white;
+    font-weight: 700;
+}
+
+#close-reset{
+    display: block;
+   color: white;
+   float: right;
+   cursor: pointer;
+}

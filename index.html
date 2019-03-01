@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    
+    <title>EPICmail</title>
+</head>
+<body>  
+    <div class="navbar">        
+        <div>
+               <a class="icon" href="#"><img src="img/email.png" alt="Error" width="70px"></a> 
+            <a class="logo" href="#">EPIC<span class="brand">mail</span></span></a>
+         </div>       
+    </div>
+    <div id="overall">
+    <div class="container">
+        <div id="signin">
+               <div class="control"> 
+            <form action="home.html">                
+               
+                        <h3 class="hfo">Sign in</h3>
+                        <label for="username" class="form-label">Username:</label>
+                        <input class="form-input" name="username" type="text" placeholder="Type your e-mail here ...">
+                        <label for="password" class="form-label">Password:</label>
+                        <input class="form-input" type="password" placeholder="Type password here ...">                    
+                        <button id="btn-login" class="btn">Sign in</button>                            
+               
+             </form>
+             <h4 class="hfo">Don't have an account? <button id="btn-signup" class="btn-link">signup</button></h4>
+             <h4 class="hfo">Forgot password? <button id="btn-reset" class="btn-link">reset</button></h4>  
+         </div>
+        </div>          
+    
+    <div id="signup">
+        <form>
+               <h3 class="hfo">Sign up</h3>
+               <div class="form-control">
+                   <label class="form-label-md" for="fname">First name:</label>
+               <input class="form-input-md" type="text" placeholder="eg: Peter"> 
+               </div>
+               
+              <div class="form-control">
+               <label class="form-label-md" for="lname">Last name:</label>
+               <input class="form-input-md" name="lname" type="text" placeholder="eg: Shema">
+              </div>
+               
+               <div class="form-control">
+                   <label class="form-label-md" for="fname">Phone number:</label>
+               <input class="form-input-md" type="text" placeholder="eg: 0780000000">
+               </div>
+
+               <div class="form-control">
+                   <label class="form-label-md" for="email">Email:</label>
+               <input class="form-input-md" name="email" type="email" placeholder="eg: abcd@epicmail.rw">
+               </div>
+               <div class="form-control">
+                   <label class="form-label-md" for="password">Password:</label>
+               <input class="form-input-md" name=password type="password">
+               </div>
+               <div class="form-control">
+                   <label class="form-label-md" for="retype">Re-type your password:</label>
+               <input class="form-input-md" name="retype" type="password">
+               </div>
+               <button class="btn btn-space">Register</button>
+               <h4 class="hfo">Back to <button class="btn-link">sign in</button></h4> 
+        </form>
+    </div>
+</div>
+    </div>
+    <div id="reset-modal">
+        <span id="close-reset">&times;</span>
+    <div>
+        <label class="form-label-md" for="pnumber">Phone number:</label>
+    <input style="width: 50%" class="form-input-md" name="pnumber" type="text" placeholder="your registered number">
+    <button class="search">Check</button>
+    </div>
+  <div>
+
+    <label class="form-label-md" for="Secret key">Secret key:</label>
+    <input class="form-input-md" type="text" placeholder="code that has been sent to your phone">
+  </div>
+ 
+   
+       <div>
+        <label class="form-label-md" for="newpassword">New password:</label>
+        <input class="form-input-md" name=newpassword type="password">
+       </div>
+   
+        <div>
+            <label class="form-label-md" for="retype">Re-type password:</label>
+    <input class="form-input-md" name="retype" type="password">
+        </div>
+  
+    <button id="btn-change-password">Change password</button>
+</div>
+    <SCript src="/js/main.js"></SCript>   
+</body>
+</html>
