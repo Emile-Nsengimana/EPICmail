@@ -31,6 +31,10 @@ closeReset.addEventListener('click', () => {
 menu.addEventListener('click', () => {
 document.getElementById('menu').classList.toggle('active');
 });
+const bdy = document.getElementById('body');
+bdy.addEventListener('onload', () => {
+    document.getElementById('menu').classList.toggle('active');
+});
 function show(){
     document.getElementById('menu').classList.toggle('active');
 }
