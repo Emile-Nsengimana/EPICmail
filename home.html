@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+    <link rel="stylesheet" href="./css/home.css">
+    <title>EPICmail | HOME</title>
+</head>
+<body onload="show()">
+        <div class="navbar">
+                <a class="icon" href="#"><img src="img/email.png" alt="Error" width="70px"></a>
+                <a class="logo" href="#">EPIC<span class="brand">mail</span></a>  
+
+            </div>
+            <div class="menu-toggle" id="menu-click" onclick="show()">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div>
+ <!-- ============================================================= SIDE MENU ======================================================================================================= -->
+
+            <div style="width: 100%">    
+                     <div id="menu">
+                                <button id="add-msg" class="btn-compose">Compose</button>
+                  <ul>
+                          <li><a id="in" href="#">Inbox<span class="badge">5</span></a></li>          
+                          <li><a id="out" href="#">Sent</a></li>
+                          <li><a id="drf" href="#">Draft</a></li>
+                          <li><a id="create-group" href="#"> Create group</a>
+                                <li><a class="btn-compose" href="index.html"> Sign out</a>
+                        </li>
+                  </ul>
+                 
+          </div>
+<!-- ============================================================= SENT ======================================================================================================= -->
+
+          <div id="sent">
+                <table>
+                                <tr>
+                                                <td class="min">TO:</td>
+                                                        <td>New Computer science school</td>
+                                                        <td>Andela learning community</td>
+                                                        <td>Rwanda coding academy</td>
+                                                        <td>12:01</td>
+
+                                                </tr>
+                                                <tr>
+                                                                <td class="min">TO:</td>
+                                                                        <td>Computer science school</td>
+                                                                        <td>Andela learning community</td>
+                                                                        <td>Rwanda coding academy</td>
+                                                                        <td>12:01</td>
+                                                                </tr>
+                                                                <tr>
+                                                                                <td class="min">TO:</td>
+                                                                                        <td>Computer science school</td>
+                                                                                        <td>Andela learning community</td>
+                                                                                        <td>Rwanda coding academy</td>
+                                                                                        <td>12:01</td>
+                                                                                </tr>                                 
+                        
+                </table>
+                          
+                </div>
+<!-- ============================================================= INBOX ======================================================================================================= -->
+<div id="inbox">
+<table>
+        <thead>
+                <td>From</td>
+                <td>Message</td>
+                <td>Time</td>
+        </thead>
+                <tr onclick="readme()">
+                                <td>Andela learning community</td>
+                                <td>Rwanda coding academy</td>
+                                <td>12:01</td>
+                                                                                
+                        </tr>
+                <tr onclick="readme()">
+                               
+                                <td>Andela learning community</td>
+                                <td>Rwanda coding academy</td>
+                                <td>12:01</td>
+                        </tr>
+                <tr onclick="readme()"">
+                               
+                                <td>Andela learning community</td>
+                                <td>Rwanda coding academy</td>
+                                <td>12:01</td>
+                        </tr>
+                <tr onclick="readme()">
+                               
+                                <td>Andela learning community</td>
+                                <td>Rwanda coding academy</td>
+                                <td>12:01</td>
+                        </tr>
+                        <tr onclick="readme()">
+                                       
+                                        <td>Andela learning community</td>
+                                        <td>Rwanda coding academy</td>
+                                        <td>12:01</td>
+                                </tr>
+        
+</table>
+          
+</div>
+<!-- ============================================================= DRAFT ======================================================================================================= -->
+
+<div id="draft">
+        <table>
+                        <tr>
+                                        <td class="drafted">Draft</td>
+                                        <td>Computer science school</td>
+                                        <td>Andela learning community</td>
+                                        <td>Rwanda coding academy</td>
+                                        <td>12:01</td>
+                                </tr>
+                                <tr>
+                                                <td class="drafted">Draft</td>
+                                                <td>Computer science school</td>
+                                                <td>Andela learning community</td>
+                                                <td>Rwanda coding academy</td>
+                                                <td>12:01</td>
+                                        </tr>
+                       
+                                <tr>
+                                                <td class="drafted">Draft</td>
+                                                <td>Computer science school</td>
+                                                <td>Andela learning community</td>
+                                                <td>Rwanda coding academy</td>
+                                                <td>12:01</td>
+                                        </tr>
+                
+        </table>
+                  
+        </div>
+</div>
+<!-- ============================================================= COMPOSE ======================================================================================================= -->
+
+<div id="message">
+      <div class="top-bar"><span >New message</span><span id="cls-message">&times;</span></div>
+        <form>
+                  <input class="form-input" name="address" type="email" placeholder="Email">
+                  <input class="form-input" type="text" placeholder="Subject">
+                  <textarea id="txt-msg" class="form-input" name="message" rows="9" placeholder="message"></textarea>
+                 
+                  <button id="btn-send" class="btn-success">Send</button>
+                  <button id="btn-cancel1" class="btn-success btn-cancel">Cancel</button>
+        </form>
+        
+  </div>
+<!-- ========================================================== CREATE GROUP ======================================================================================================= -->
+
+<div id="group">
+        <span id="cls-group" cls-hd>&times;</span>
+        <form>
+                  <input class="form-input" name="group-name" type="text" placeholder="Group name">
+                  <label>Members</Address>
+                      <div class="pad">
+                  <Address></Address>
+                  <input class="form-input" name="address" type="email" placeholder="Member 1">
+                  <input class="form-input" name="address" type="email" placeholder="Member 2">
+                  <input class="form-input" name="address" type="email" placeholder="Member 3">
+                  <input class="form-input" name="address" type="email" placeholder="Member 4">
+                  <input class="form-input" name="address" type="email" placeholder="Member 5">
+                </div><br><br>
+                  <button id="btn-send" class="btn-success">Create</button>
+                  <button id="btn-cancel2" class="btn-success btn-cancel">Cancel</button>
+        </form>
+        
+  </div>
+<!-- ========================================================== CREATE GROUP ======================================================================================================= -->
+<div id="read">
+        <label>From:</label>
+        <h3>emile@epicmail.com</h3>
+        <br><br><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id modi, eaque perferendis atque magni sint culpa deleniti laboriosam dolorum quibusdam labore. Veritatis praesentium molestias ab rem sit consequuntur ullam tempora.</p>
+       <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quisquam, et excepturi, enim id perspiciatis architecto ipsa maiores sequi eos voluptates explicabo dolor? Corporis dignissimos culpa quisquam illo? Pariatur, aspernatur.</p>
+        <button id="btn-back" class="btn-success">Back</button>
+</div>
+<!-- ========================================================== ======================================================================================================= -->
+
+<script src="/js/main.js"></script>
+<script src="js/mail.js"></script>
+<script src="js/check.js"></script>
+</body>
+</html>
