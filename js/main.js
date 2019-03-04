@@ -1,5 +1,5 @@
 const btnSignup= document.getElementById('btn-signup');
-const Signin= document.getElementById('signin');
+const signin= document.getElementById('signin');
 const signup = document.getElementById('signup');
 const btnReset = document.getElementById('btn-reset');
 const modalReset = document.getElementById('reset-modal');
@@ -7,9 +7,10 @@ const btnChangePassword = document.getElementById('btn-change-password');
 const closeReset = document.getElementById('close-reset');
 const menu = document.getElementById('menu-click');
 const btnLogin = document.getElementById('btn-login');
+const messa = document.getElementById('message');
 
 btnSignup.addEventListener('click', () => {
-    Signin.style.display =  "none";
+    signin.style.display =  "none";
     signup.style.display =  "block";
 });
 
@@ -31,10 +32,10 @@ closeReset.addEventListener('click', () => {
 menu.addEventListener('click', () => {
 document.getElementById('menu').classList.toggle('active');
 });
-const bdy = document.getElementById('body');
-bdy.addEventListener('onload', () => {
-    document.getElementById('menu').classList.toggle('active');
-});
 function show(){
     document.getElementById('menu').classList.toggle('active');
 }
+const btnOpen = document.getElementById('btnopen');
+btnOpen.addEventListener('click', () => {
+    document.getElementById('trash').style.display = "block";
+});

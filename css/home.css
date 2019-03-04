@@ -4,11 +4,10 @@
 }
 
 body{
-    background-image:linear-gradient(rgba(177, 177, 202, 0.5), rgba(0, 233, 33, 0.4)), url(./img/world.png);
+    background-image:linear-gradient(rgba(177, 177, 202, 0.5), rgba(0, 233, 33, 0.4)), url(/img/world.png);
 background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* background: rgba(109, 124, 119, 0.4); */
     height: 100vh;
   margin: 0;
   padding: 0;
@@ -21,6 +20,9 @@ a{
 p{
   font-weight: 200;
   margin-bottom: 20px;
+}
+button{
+  cursor: pointer;
 }
 #read h3{
   color: rgb(139, 139, 119);
@@ -103,7 +105,6 @@ font-family: 'Yatra One', cursive;
   color: black;
   border-bottom:2px solid rgba(199, 199, 199, 0.4);
 }
-
 td{
   width: 10%;
   padding: 10px;
@@ -132,8 +133,8 @@ font-size: 14pt;
   padding-right: 20px;
   margin-top: 53px;
   padding: 10px;
-  left:0px;
-  /* transition: .9s; */
+  left:0;
+  transition: 2s;
 }
 #menu ul li a{
   list-style: none;
@@ -159,7 +160,7 @@ font-size: 14pt;
   position: absolute;
   top: 33px;
   left: 34px;
-  
+  cursor: pointer;
 }
 #menu.active {
   left: -250px;
@@ -181,7 +182,7 @@ font-size: 14pt;
   font-size: 12pt;
   font-weight: 500;
 }
-#message{
+#message, #trash{
   display: none;
   width: 98vh;
   height: 450px;
@@ -249,17 +250,6 @@ margin: auto;
   font-weight: 500;
   font-size: 15pt;    
   padding: 4px;
-  /* text-align: center; */
-/* width: 90%;
-color: black;
-height: 70%;
-border-radius: 8px;
-padding: 4px;
-height: 30;
-margin: 7px;
-outline: none;
-font-family: Arial, Helvetica, sans-serif;
-font-weight: 700; */
 }
 #txt-msg{
   color: black;
@@ -337,4 +327,80 @@ cursor: pointer;
 
 .btn-cancel{
   background: rgb(187, 133, 112);
+}
+#undo{
+  width: 12%;
+  background: rgb(129, 65, 81);
+  height: 25px;
+  border-radius: 5px;
+  padding-left: 12px;
+  margin-right: 20px;
+  padding-top: 5px;
+  float: right;
+  display: none;
+}
+#undo :active{
+  transition: 2s;
+}
+#undo h4{
+  padding:0;
+  margin: 0;
+  display: inline;
+}
+#undo button{
+  background: white;
+  border-radius: 5px;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  padding: 3px;
+  margin-left: 20px;
+}
+#undo button:hover{
+background: rgb(29, 197, 71);
+}
+
+.btn-danger{
+  width: 93%;
+  background: rgb(231, 70, 70);
+  padding: 3px;
+  border-radius: 7px;
+  outline: none;
+  color:white;
+  font-weight: 700;
+}
+.btn-danger:hover{
+  background: transparent;
+  color: red;
+}
+.btn-open{
+  width: 93%;
+  background: rgb(113, 214, 113);
+  padding: 3px;
+  border-radius: 7px;
+  outline: none;
+  color:white;
+  font-weight: 700;
+}
+.btn-open:hover{
+  background: transparent;
+  color: green;
+}
+
+#trash{
+  display: none;
+  width: 98vh;
+  height: 450px;
+  color: black;
+  border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+  background: rgb(252, 252, 252);
+ padding-left: 40px;
+ padding-top: 20px;
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: 700;
+ position: absolute;
+ top: 100px;
+ left: 30%;
+ z-index: 1;
 }
