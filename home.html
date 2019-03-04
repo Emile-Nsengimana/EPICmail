@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/home.css">
     <title>EPICmail | HOME</title>
 </head>
-<body id="body">
+<body>
         <div class="navbar">
                 <a class="icon" href="#"><img src="img/email.png" alt="Error" width="70px"></a>
                 <a class="logo" href="#">EPIC<span class="brand">mail</span></a>  
@@ -64,8 +64,11 @@
                 </table>
                           
                 </div>
+                <div id="undo"><h4>Message sent </h4><button id="btn-undo">Undo</button></div>
+
 <!-- ============================================================= INBOX ======================================================================================================= -->
 <div id="inbox">
+        
 <table>
         <thead>
                 <td>From</td>
@@ -116,26 +119,34 @@
                                         <td>Andela learning community</td>
                                         <td>Rwanda coding academy</td>
                                         <td>12:01</td>
+                                        <td><button id="btnopen" class="btn-open">Open</button></td>
+                                        <td><button class="btn-danger">Delete</button></td>
                                 </tr>
-                                <tr>
-                                                <td class="drafted">Draft</td>
-                                                <td>Computer science school</td>
-                                                <td>Andela learning community</td>
-                                                <td>Rwanda coding academy</td>
-                                                <td>12:01</td>
-                                        </tr>
-                       
-                                <tr>
-                                                <td class="drafted">Draft</td>
-                                                <td>Computer science school</td>
-                                                <td>Andela learning community</td>
-                                                <td>Rwanda coding academy</td>
-                                                <td>12:01</td>
-                                        </tr>
-                
+
+                        <tr>
+                                        <td class="drafted">Draft</td>
+                                        <td>Computer science school</td>
+                                        <td>Andela learning community</td>
+                                        <td>Rwanda coding academy</td>
+                                        <td>12:01</td>
+                                        <td><button id="btnopen" class="btn-open">Open</button></td>
+                                        <td><button class="btn-danger">Delete</button></td>
+                                </tr>
+
+                        <tr>
+                                        <td class="drafted">Draft</td>
+                                        <td>Computer science school</td>
+                                        <td>Andela learning community</td>
+                                        <td>Rwanda coding academy</td>
+                                        <td>12:01</td>
+                                        <td><button id="btnopen" class="btn-open">Open</button></td>
+                                        <td><button class="btn-danger">Delete</button></td>
+                                </tr>
+                                
         </table>
                   
         </div>
+
 </div>
 <!-- ============================================================= COMPOSE ======================================================================================================= -->
 
@@ -151,6 +162,7 @@
         </form>
         
   </div>
+  
 <!-- ========================================================== CREATE GROUP ======================================================================================================= -->
 
 <div id="group">
@@ -166,7 +178,7 @@
                   <input class="form-input" name="address" type="email" placeholder="Member 4">
                   <input class="form-input" name="address" type="email" placeholder="Member 5">
                 </div><br><br>
-                  <button id="btn-send" class="btn-success">Create</button>
+                  <button id="btn-create" class="btn-success">Create</button>
                   <button id="btn-cancel2" class="btn-success btn-cancel">Cancel</button>
         </form>
         
@@ -182,6 +194,34 @@
         <button id="btn-back" class="btn-success">Back</button>
 </div>
 <!-- ========================================================== ======================================================================================================= -->
+
+
+<div id="trash">
+                <div class="top-bar"><span >New message</span><span id="cls-message">&times;</span></div>
+                  <form>
+                            <input class="form-input" name="address" type="email" placeholder="Email">
+                            <input class="form-input" type="text" placeholder="Subject">
+                            <textarea id="txt-msg" class="form-input" name="message" rows="9" placeholder="message"></textarea>
+                           
+                            <button  class="btn-success">Send</button>
+                            <button class="btn-success btn-cancel">Cancel</button>
+                  </form>
+                  
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script src="/js/main.js"></script>
 <script src="js/mail.js"></script>
