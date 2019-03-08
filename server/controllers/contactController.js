@@ -40,7 +40,7 @@ class contactController {
 
   static getOneContact(req, res) {
     const { email } = req.params;
-    const contact = contacts.find(c => c.firstName === email);
+    const contact = contacts.find(c => c.email === email);
     if (contact) {
       return res.status(200).json({
         status: 200,
