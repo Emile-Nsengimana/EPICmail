@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 describe('Contact tests', () => {
   it('should be able to add a contact', (done) => {
     const contact = {
-      id: 3,
+      id: 4,
       firstName: 'Mellisa',
       lastName: 'Nishimwe',
       email: 'mellisa@epicmail.rw',
@@ -36,7 +36,7 @@ describe('Contact tests', () => {
   });
   it('Should get a specific contact', (done) => {
     chai.request(server)
-      .get('/api/v1/contacts/Emile')
+      .get('/api/v1/contacts/emile@epicmail.rw')
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
@@ -54,7 +54,7 @@ describe('Contact tests', () => {
   });
   it('should be able to remove a contact', (done) => {
     chai.request(server)
-      .get('/api/v1/contacts/Jack')
+      .get('/api/v1/contacts/emile@epicmail.rw')
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
