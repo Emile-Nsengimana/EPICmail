@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for EPICmail/server/tests/userTest.js</title>
+    <title>Code coverage report for EPICmail/server/tests/groupTest.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">EPICmail/server/tests</a> userTest.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">EPICmail/server/tests</a> groupTest.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -116,11 +116,7 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -135,9 +131,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,7 +139,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -203,64 +195,60 @@ import server from '../../server';
 chai.should();
 chai.use(chaiHttp);
 &nbsp;
-describe('User tests', () =&gt; {
-  it('should be able to add a user', (done) =&gt; {
-    const user = {
-      firstName: 'Peter',
-      lastName: 'Mark',
-      email: 'pete@epicmail.rw',
-      password: 'password',
-      phoneNo: '0781234567',
+describe('Group tests', () =&gt; {
+  it('should be able to create a group', (done) =&gt; {
+    const grp = {
+      id: 4,
+      name: 'group 4',
     };
     chai.request(server)
-      .post('/api/v1/users')
-      .send(user)
+      .post('/api/v1/groups')
+      .send(grp)
       .end((err, res) =&gt; {
         chai.expect(res.body).to.be.a('object');
         chai.expect(res.statusCode).to.be.equal(200);
       });
     done();
   });
-&nbsp;
-  it('should get all users', (done) =&gt; {
+  it('should be able to display all groups', (done) =&gt; {
     chai.request(server)
-      .get('/api/v1/users')
+      .get('/api/v1/groups')
       .end((err, res) =&gt; {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
         done();
       });
   });
-  it('Should get a specific user', (done) =&gt; {
+  it('should be able to display a specified group name', (done) =&gt; {
     chai.request(server)
-      .get('/api/v1/users/emile@epicmail.rw')
+      .get('/api/v1/groups/Group 1')
       .end((err, res) =&gt; {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
         done();
       });
   });
-  it('should not be able to get unexisting user', (done) =&gt; {
+  it('should not be able to display unexisting group', (done) =&gt; {
     chai.request(server)
-      .get('/api/v1/users/abc@epicmail.rw')
+      .get('/api/v1/groups/Group 17')
       .end((err, res) =&gt; {
-        res.body.should.be.a('object');
-        res.body.should.have.property('status').eql(404);
+        chai.expect(res.statusCode).to.be.equal(404);
+        chai.expect(res.body).to.be.a('object');
         done();
       });
   });
-  it('should be able to remove a user', (done) =&gt; {
+  it('should be able to remove a group', (done) =&gt; {
     chai.request(server)
-      .delete('/api/v1/users/fred@epicmail.rw')
+      .delete('/api/v1/groups/Group 1')
       .end((err, res) =&gt; {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
         done();
       });
   });
-  it('should not be able to remove unexisting user', (done) =&gt; {
+  it('should not be able to remove unexisting group', (done) =&gt; {
     chai.request(server)
-      .delete('/api/v1/users/abc@epicmail.rw')
+      .delete('/api/v1/groups/Group 10')
       .end((err, res) =&gt; {
         chai.expect(res.statusCode).to.be.equal(404);
         chai.expect(res.body).to.be.a('object');
@@ -274,11 +262,7 @@ describe('User tests', () =&gt; {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-<<<<<<< HEAD
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 10 2019 00:20:45 GMT+0200 (Central Africa Time)
-=======
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 10 2019 00:35:40 GMT+0200 (Central Africa Time)
->>>>>>> challenge-ii
 </div>
 </div>
 <script src="../../../prettify.js"></script>

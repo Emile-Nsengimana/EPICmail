@@ -24,12 +24,12 @@
     "moment": "^2.24.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "chai-http": "^4.2.1",
     "nyc": "^13.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10",
     "chai": "^4.2.0",
-    "chai-http": "^4.2.1",
     "coveralls": "^3.0.3",
     "eslint": "^5.15.0",
     "eslint-config-airbnb-base": "^13.1.0",
