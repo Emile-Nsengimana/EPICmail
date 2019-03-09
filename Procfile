@@ -1,1 +1,1 @@
-web: npm start
+web: node --require babel-register app.js
