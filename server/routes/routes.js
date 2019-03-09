@@ -23,6 +23,7 @@ router.get('/api/v1/messages', messageController.getAllMessages);
 router.get('/api/v1/messages/unread', messageController.unreadMessage);
 router.get('/api/v1/messages/read', messageController.readMessage);
 router.get('/api/v1/messages/sent/:senderId', messageController.sentMessage);
+router.get('/api/v1/messages/inbox/:receiverId', messageController.inboxMessage);
 router.delete('/api/v1/messages/:id', messageController.removeMessage);
 
 // =====================================  ROUTES =====================================

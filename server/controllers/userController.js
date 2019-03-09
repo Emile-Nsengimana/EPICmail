@@ -72,7 +72,7 @@ class userController {
         info: 'user removed',
       });
     }
-    return res.status(200).json({
+    return res.status(404).json({
       status: 404,
       info: 'user not found',
     });
