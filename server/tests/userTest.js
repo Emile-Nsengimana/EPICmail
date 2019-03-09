@@ -14,7 +14,7 @@ describe('User tests', () => {
       lastName: 'Mark',
       email: 'pete@epicmail.rw',
       password: 'password',
-      phoneNo: '0731234567',
+      phoneNo: '0781234567',
     };
     chai.request(server)
       .post('/api/v1/users')
@@ -55,7 +55,7 @@ describe('User tests', () => {
   });
   it('should be able to remove a user', (done) => {
     chai.request(server)
-      .get('/api/v1/users/fred@epicmail.rw')
+      .delete('/api/v1/users/fred@epicmail.rw')
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
@@ -64,7 +64,7 @@ describe('User tests', () => {
   });
   it('should not be able to remove unexisting user', (done) => {
     chai.request(server)
-      .get('/api/v1/users/abc@epicmail.rw')
+      .delete('/api/v1/users/abc@epicmail.rw')
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(404);
         chai.expect(res.body).to.be.a('object');

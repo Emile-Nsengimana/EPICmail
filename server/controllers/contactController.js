@@ -1,7 +1,7 @@
 import contacts from '../models/contact';
 
 class contactController {
-  // ================================= ADD CONTACT ==========================
+  // ================================= ADD CONTACT =============================
   static addContact(req, res) {
     const no = contacts.length + 1;
     const {
@@ -36,7 +36,7 @@ class contactController {
       data: contacts,
     });
   }
-  // ================================= GET SPECIFIC CONTACT ==========================
+  // ================================= GET SPECIFIC CONTACT =======================
 
   static getOneContact(req, res) {
     const { email } = req.params;
@@ -53,7 +53,7 @@ class contactController {
     });
   }
 
-  // ================================= DELETE A CONTACT ==========================
+  // ================================= DELETE A CONTACT ============================
   static removeContact(req, res) {
     const { email } = req.params;
     const contact = contacts.find(ct => ct.email === email);

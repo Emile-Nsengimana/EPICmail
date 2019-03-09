@@ -57,19 +57,38 @@ describe('Message tests', () => {
 
   it('should not be able to remove unexisting message', (done) => {
     chai.request(server)
-      .get('/api/v1/messages/99')
+      .delete('/api/v1/messages/99')
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(404);
         chai.expect(res.body).to.be.a('object');
         done();
       });
   });
-//   it('should be able to remove a message', (done) => {
-//     chai.request(server)
-//       .get('/api/v1/messages/1')
-//       .end((err, res) => {
-//         chai.expect(res.statusCode).to.be.equal(200);
-//         done();
-//       });
-//   });
+
+  it('should be able to remove a message', (done) => {
+    chai.request(server)
+      .delete('/api/v1/messages/1')
+      .end((err, res) => {
+        chai.expect(res.statusCode).to.be.equal(200);
+        done();
+      });
+  });
+  it('should be able to display inbox messages', (done) => {
+    chai.request(server)
+      .get('/api/v1/messages/inbox/1')
+      .end((err, res) => {
+        chai.expect(res.statusCode).to.be.equal(200);
+        chai.expect(res.body).to.be.a('object');
+        done();
+      });
+  });
+  it('should be able to display sent messages', (done) => {
+    chai.request(server)
+      .get('/api/v1/messages/sent/1')
+      .end((err, res) => {
+        chai.expect(res.statusCode).to.be.equal(200);
+        chai.expect(res.body).to.be.a('object');
+        done();
+      });
+  });
 });
