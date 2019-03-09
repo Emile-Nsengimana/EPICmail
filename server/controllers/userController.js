@@ -31,13 +31,6 @@ class userController {
 
   // ================================== GET ALL USER =====================================
   static getUsers(req, res) {
-    // const no = users.length;
-    // if (no === 0) {
-    //   return res.json({
-    //     status: '404',
-    //     error: 'No user found',
-    //   });
-    // }
     return res.json({
       status: 200,
       data: users,
