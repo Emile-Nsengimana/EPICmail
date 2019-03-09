@@ -1,5 +1,6 @@
 import moment from 'moment';
 import messages from '../models/message';
+import sents from '../models/sent';
 
 class messageController {
 // ============================================= LIST ALL MESSAGES =======================
@@ -96,6 +97,30 @@ class messageController {
     return res.status(200).json({
       status: 200,
       data: reads,
+    });
+  }
+
+  static sentMessage(req, res) {
+    const sid = parseInt(req.params.senderId, 10);
+    const viewMsg = [];
+    for (let i = 0; i < messages.length; i += 1) {
+      if (sents[i].senderId === sid) {
+        for (let j = 0; j < messages.length; j += 1) {
+          if (messages[j].id === sents[i].messageId) {
+            viewMsg.push(messages[j]);
+          }
+        }
+      }
+    }
+    if (viewMsg.length === 0) {
+      return res.status(400).json({
+        status: 400,
+        data: 'no messages sent for the user with that id',
+      });
+    }
+    return res.status(200).json({
+      status: 200,
+      data: viewMsg,
     });
   }
 }
