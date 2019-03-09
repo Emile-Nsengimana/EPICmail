@@ -40,6 +40,15 @@ describe('Group tests', () => {
         done();
       });
   });
+  it('should not be able to display unexisting group', (done) => {
+    chai.request(server)
+      .get('/api/v1/groups/Group 17')
+      .end((err, res) => {
+        chai.expect(res.statusCode).to.be.equal(404);
+        chai.expect(res.body).to.be.a('object');
+        done();
+      });
+  });
   it('should be able to remove a group', (done) => {
     chai.request(server)
       .delete('/api/v1/groups/Group 1')

@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">96.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>60/65</span>
+        <span class='fraction'>56/58</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">79.17% </span>
+        <span class="strong">88.89% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>19/24</span>
+        <span class='fraction'>16/18</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">90.91% </span>
+        <span class="strong">95.83% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>50/55</span>
+        <span class='fraction'>46/48</span>
       </div>
     </div>
     <p class="quiet">
@@ -208,9 +208,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,8 +271,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -291,8 +291,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -362,13 +362,13 @@ import inbox from '../models/inbox';
 class messageController {
 // ============================================= LIST ALL MESSAGES =======================
   static getAllMessages(req, res) {
-    const chk = messages.length;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (chk === 0) {
-<span class="cstat-no" title="statement not covered" >      return r</span>es.status(404).json({
-        status: 404,
-        data: 'no message',
-      });
-    }
+    // const chk = messages.length;
+    // if (chk === 0) {
+    //   return res.status(404).json({
+    //     status: 404,
+    //     data: 'no message',
+    //   });
+    // }
     return res.status(200).json({
       status: 200,
       data: messages,
@@ -425,12 +425,12 @@ class messageController {
         unreads.push(messages[i]);
       }
     }
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (unreads.length === 0) {
-<span class="cstat-no" title="statement not covered" >      return r</span>es.status(404).json({
-        status: 404,
-        data: 'no unread messages',
-      });
-    }
+    // if (unreads.length === 0) {
+    //   return res.status(404).json({
+    //     status: 404,
+    //     data: 'no unread messages',
+    //   });
+    // }
     return res.status(200).json({
       status: 200,
       data: unreads,
@@ -445,12 +445,12 @@ class messageController {
         reads.push(messages[i]);
       }
     }
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (reads.length === 0) {
-<span class="cstat-no" title="statement not covered" >      return r</span>es.status(404).json({
-        status: 404,
-        data: 'no read messages',
-      });
-    }
+    // if (reads.length === 0) {
+    //   return res.status(404).json({
+    //     status: 404,
+    //     data: 'no read messages',
+    //   });
+    // }
     return res.status(200).json({
       status: 200,
       data: reads,
@@ -472,7 +472,7 @@ class messageController {
     }
     <span class="missing-if-branch" title="if path not taken" >I</span>if (viewMsg.length === 0) {
 <span class="cstat-no" title="statement not covered" >      return r</span>es.status(400).json({
-        status: 400,
+        status: 404,
         data: 'no messages sent for the user with that id',
       });
     }
@@ -514,7 +514,7 @@ export default messageController;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 10 2019 00:11:55 GMT+0200 (Central Africa Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 10 2019 00:35:40 GMT+0200 (Central Africa Time)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

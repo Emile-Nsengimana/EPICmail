@@ -24,13 +24,13 @@ class contactController {
 
   // ================================= LIST ALL CONTACTS ==========================
   static listContacts(req, res) {
-    const chk = contacts.length;
-    if (chk === 0) {
-      return res.status(404).json({
-        status: 404,
-        error: 'No contacts found',
-      });
-    }
+    // const chk = contacts.length;
+    // if (chk === 0) {
+    //   return res.status(404).json({
+    //     status: 404,
+    //     error: 'No contacts found',
+    //   });
+    // }
     return res.status(200).json({
       status: 200,
       data: contacts,
