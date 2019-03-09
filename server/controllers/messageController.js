@@ -6,13 +6,6 @@ import inbox from '../models/inbox';
 class messageController {
 // ============================================= LIST ALL MESSAGES =======================
   static getAllMessages(req, res) {
-    // const chk = messages.length;
-    // if (chk === 0) {
-    //   return res.status(404).json({
-    //     status: 404,
-    //     data: 'no message',
-    //   });
-    // }
     return res.status(200).json({
       status: 200,
       data: messages,
@@ -46,8 +39,7 @@ class messageController {
   // ============================================= DELETE MESSAGE =============================
 
   static removeMessage(req, res) {
-    const i = parseInt(req.params.id, 10);
-    const msg = messages.find(ct => ct.id === i);
+    const msg = messages.find(ct => ct.id === parseInt(req.params.id, 10));
     if (msg) {
       messages.pop(msg);
       return res.status(200).json({
@@ -69,12 +61,6 @@ class messageController {
         unreads.push(messages[i]);
       }
     }
-    // if (unreads.length === 0) {
-    //   return res.status(404).json({
-    //     status: 404,
-    //     data: 'no unread messages',
-    //   });
-    // }
     return res.status(200).json({
       status: 200,
       data: unreads,
@@ -89,12 +75,6 @@ class messageController {
         reads.push(messages[i]);
       }
     }
-    // if (reads.length === 0) {
-    //   return res.status(404).json({
-    //     status: 404,
-    //     data: 'no read messages',
-    //   });
-    // }
     return res.status(200).json({
       status: 200,
       data: reads,
