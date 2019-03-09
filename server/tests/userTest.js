@@ -14,7 +14,7 @@ describe('User tests', () => {
       lastName: 'Mark',
       email: 'pete@epicmail.rw',
       password: 'password',
-      phoneNo: '0731234567',
+      phoneNo: '0781234567',
     };
     chai.request(server)
       .post('/api/v1/users')
