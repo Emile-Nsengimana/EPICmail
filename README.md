@@ -22,6 +22,7 @@ https://emile-nsengimana.github.io/EPICmail/UI
 | /api/v1/messages/unread | GET | display unread messages |
 | /api/v1/messages/read | GET | display read messages |
 | /api/v1/messages/:id | DELETE | remove a specific message |
+| /api/v1/messages/sent/:senderId | GET | remove a specific message |
 | /api/v1/messages | POST | add a message |
 | /api/v1/contacts | GET | display all contacts |
 | /api/v1/contacts/:email | GET | display a specific contact |
