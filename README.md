@@ -1,5 +1,4 @@
-# EPICmail [![Build Status](https://travis-ci.com/Emile-Nsengimana/EPICmail.svg?branch=develop)](https://travis-ci.com/Emile-Nsengimana/EPICmail) [![Coverage Status](https://coveralls.io/repos/github/Emile-Nsengimana/EPICmail/badge.svg?branch=challenge-ii)](https://coveralls.io/github/Emile-Nsengimana/EPICmail?branch=challenge-ii)
-A web app that helps people exchange messages/information over the internet
+# EPICmail [![Build Status](https://travis-ci.com/Emile-Nsengimana/EPICmail.svg?branch=develop)](https://travis-ci.com/Emile-Nsengimana/EPICmail)[![Coverage Status](https://coveralls.io/repos/github/Emile-Nsengimana/EPICmail/badge.svg?branch=challenge-ii)](https://coveralls.io/github/Emile-Nsengimana/EPICmail?branch=challenge-ii)
 
 # UI was developed using
 * html
@@ -22,10 +21,7 @@ https://emile-nsengimana.github.io/EPICmail/UI
 | /api/v1/messages/unread | GET | display unread messages |
 | /api/v1/messages/read | GET | display read messages |
 | /api/v1/messages/:id | DELETE | remove a specific message |
-<<<<<<< HEAD
 | /api/v1/messages/sent/:senderId | GET | remove a specific message |
-=======
->>>>>>> origin/challenge-ii
 | /api/v1/messages | POST | add a message |
 | /api/v1/contacts | GET | display all contacts |
 | /api/v1/contacts/:email | GET | display a specific contact |
