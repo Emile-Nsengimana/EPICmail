@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for EPICmail/server/models/contact.js</title>
+    <title>Code coverage report for EPICmail/server/models/inbox.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">EPICmail/server/models</a> contact.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">EPICmail/server/models</a> inbox.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -64,10 +64,7 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -85,30 +82,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const contacts = [
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const inbox = [
   {
-    id: 1,
-    firstName: 'Emile',
-    lastName: 'Nsengimana',
-    email: 'emile@epicmail.rw',
+    receiverId: 1,
+    messageId: 1,
+    createdOn: '12-12-2000',
   },
   {
-    id: 2,
-    firstName: 'Jack',
-    lastName: 'Shema',
-    email: 'jack@epicmail.rw',
-  },
-  {
-    id: 3,
-    firstName: 'Suzan',
-    lastName: 'Uwase',
-    email: 'suzan@epicmail.rw',
+    receiverId: 1,
+    messageId: 2,
+    createdOn: '12-12-2000',
+  }, {
+    receiverId: 2,
+    messageId: 1,
+    createdOn: '12-12-2000',
   },
 ];
-export default contacts;
+&nbsp;
+export default inbox;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
