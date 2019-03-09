@@ -2,6 +2,7 @@ import express from 'express';
 import userController from '../controllers/userController';
 import contactController from '../controllers/contactController';
 import messageController from '../controllers/messageController';
+import groupController from '../controllers/groupController';
 
 const router = express.Router();
 
@@ -26,7 +27,10 @@ router.get('/api/v1/messages/sent/:senderId', messageController.sentMessage);
 router.get('/api/v1/messages/inbox/:receiverId', messageController.inboxMessage);
 router.delete('/api/v1/messages/:id', messageController.removeMessage);
 
-// =====================================  ROUTES ============================================
-
+// =====================================  GROUP ROUTES =======================================
+router.post('/api/v1/groups', groupController.addGroup);
+router.get('/api/v1/groups', groupController.showGroups);
+router.get('/api/v1/groups/:name', groupController.getThisGroups);
+router.delete('/api/v1/groups/:name', groupController.removeGroup);
 
 export default router;
