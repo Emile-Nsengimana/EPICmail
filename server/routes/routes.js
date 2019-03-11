@@ -5,6 +5,11 @@ import messageController from '../controllers/messageController';
 import groupController from '../controllers/groupController';
 
 const router = express.Router();
+router.get('/', (req, res) => {
+  res.json({
+    message: 'welcome to my app',
+  });
+});
 
 // ===================================== USER ROUTES ========================================
 router.post('/api/v1/users', userController.addUser);
