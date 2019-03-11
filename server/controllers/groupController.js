@@ -37,8 +37,7 @@ class groupController {
   }
 
   static removeGroup(req, res) {
-    const nm = req.params.name;
-    const chk = group.find(g => g.name === nm);
+    const chk = group.find(g => g.name === req.params.name);
     if (chk) {
       group.pop(chk);
       return res.status(200).json({
