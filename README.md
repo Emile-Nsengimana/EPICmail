@@ -7,6 +7,9 @@
 # UI template(gh-pages)
 https://emile-nsengimana.github.io/EPICmail/UI
 
+# Heroku
+https://andela-epicmail.herokuapp.com/
+
 # API endpoind was developed using
 * Nodejs v10.15.1
 * Express (server)
