@@ -7,7 +7,7 @@
 # UI template(gh-pages)
 https://emile-nsengimana.github.io/EPICmail/UI
 
-# HEROKU
+# Heroku
 https://andela-epicmail.herokuapp.com/
 
 # API endpoind was developed using
