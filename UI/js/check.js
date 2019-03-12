@@ -6,9 +6,9 @@ const read = document.getElementById('read');
 const backInbox =document.getElementById('btn-back');
 
 inbox.addEventListener('click', () => {
-    document.getElementById('inbox').style.display = "block";
-    document.getElementById('sent').style.display = "none";
-    document.getElementById('draft').style.display = "none";
+    document.getElementById('inbox').style.display = 'block';
+    document.getElementById('sent').style.display = 'none';
+    document.getElementById('draft').style.display = 'none';
 });
 
 sent.addEventListener('click', () => {
