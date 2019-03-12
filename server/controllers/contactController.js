@@ -1,4 +1,5 @@
 import contacts from '../models/contact';
+import schema from './validate/contactSchema';
 
 class contactController {
   // ================================= ADD CONTACT =============================
@@ -9,16 +10,22 @@ class contactController {
       lastName,
       email,
     } = req.body;
-    const newContact = {
+    const newContact = schema.validate({
       no,
       firstName,
       lastName,
       email,
-    };
-    contacts.push(newContact);
-    return res.status(200).json({
-      status: 200,
-      data: newContact,
+    });
+    if (!newContact.error) {
+      contacts.push(newContact);
+      return res.status(200).json({
+        status: 200,
+        data: [newContact.value],
+      });
+    }
+    return res.status(404).json({
+      status: 404,
+      data: newContact.error.details[0].message.replace('"', ' ').replace('"', ''),
     });
   }
 

@@ -2,6 +2,7 @@ import moment from 'moment';
 import messages from '../models/message';
 import sents from '../models/sent';
 import inbox from '../models/inbox';
+import schema from './validate/messageSchema';
 
 class messageController {
 // ============================================= LIST ALL MESSAGES =======================
@@ -22,18 +23,24 @@ class messageController {
       parentMessageId,
       status,
     } = req.body;
-    const newMessage = {
+    const newMessage = schema.validate({
       id,
       subject,
       message,
       parentMessageId,
       createdOn,
       status,
-    };
-    messages.push(newMessage);
-    return res.status(200).json({
-      status: 200,
-      data: newMessage,
+    });
+    if (!newMessage.error) {
+      messages.push(newMessage);
+      return res.status(200).json({
+        status: 200,
+        data: [newMessage.value],
+      });
+    }
+    return res.status(404).json({
+      status: 404,
+      data: [newMessage.error.details[0].message.replace('"', '').replace('"', '')],
     });
   }
   // ============================================= DELETE MESSAGE =============================
