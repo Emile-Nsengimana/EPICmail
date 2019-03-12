@@ -14,11 +14,10 @@ function act() {
 }
 
 inbox.addEventListener('click', () => {
-<<<<<<< HEAD
-    document.getElementById('inbox').style.display = 'block';
-    document.getElementById('sent').style.display = 'none';
-    document.getElementById('draft').style.display = 'none';
-=======
+
+  document.getElementById('inbox').style.display = 'block';
+  document.getElementById('sent').style.display = 'none';
+  document.getElementById('draft').style.display = 'none';
   document.getElementById('inbox').style.display = 'block';
   document.getElementById('sent').style.display = 'none';
   document.getElementById('draft').style.display = 'none';
@@ -31,7 +30,6 @@ inbox.addEventListener('click', () => {
   sent.style.background = 'none';
   draft.style.color = 'white';
   draft.style.background = 'none';
->>>>>>> 26bfb554a35292161b378e079cffadb9a66fcf57
 });
 
 sent.addEventListener('click', () => {
