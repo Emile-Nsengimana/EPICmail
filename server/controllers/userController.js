@@ -1,5 +1,6 @@
 // import moment from 'moment';
 import users from '../models/user';
+import schema from './validate/userSchema';
 
 class userController {
   // ================================== ADD USER =====================================
@@ -13,7 +14,7 @@ class userController {
       phoneNo,
     } = req.body;
 
-    const newUser = {
+    const newUser = schema.validate({
       userId,
       firstName,
       lastName,
@@ -21,11 +22,17 @@ class userController {
       password,
       phoneNo,
       // created_at: moment.utc().format(),
-    };
-    users.push(newUser);
-    return res.status(200).json({
-      status: 200,
-      data: newUser,
+    });
+    if (!newUser.error) {
+      users.push(newUser);
+      return res.status(200).json({
+        status: 200,
+        data: [newUser.value],
+      });
+    }
+    return res.status(404).json({
+      status: 404,
+      data: [newUser.error.details[0].message.replace('"', ' ').replace('"', '')],
     });
   }
 
