@@ -359,19 +359,6 @@ cursor: pointer;
 background: rgb(29, 197, 71);
 }
 
-.btn-danger{
-  width: 93%;
-  background: rgb(231, 70, 70);
-  padding: 3px;
-  border-radius: 7px;
-  outline: none;
-  color:white;
-  font-weight: 700;
-}
-.btn-danger:hover{
-  background: transparent;
-  color: red;
-}
 .btn-open{
   width: 93%;
   background: rgb(113, 214, 113);
@@ -380,6 +367,15 @@ background: rgb(29, 197, 71);
   outline: none;
   color:white;
   font-weight: 700;
+}
+.btn-icon{
+  background: transparent;
+  border: none;
+  margin-left: 10px;
+  outline: none;
+}
+.btn-icon:hover{
+  zoom: 1.2;
 }
 .btn-open:hover{
   background: transparent;
