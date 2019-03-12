@@ -257,19 +257,18 @@ margin: auto;
   resize: none;
 }
 .btn-success{
-  background: rgb(0, rgb(30, 56, 30), blue);
+  background: rgb(187, 133, 112);
   width: 20%;
   border-radius: 5px;
   height: 27px;
   font-size: 15pt;
   font-weight: 700;
   outline: none;
-  border: none;
+  border: solid 2px rgb(187, 133, 112);
   float: right;
   margin-right: 50px;
 }
 .btn-success:hover{
-  border: 1px solid rgba(24, 73, 24, 0.7);
 cursor: pointer;
 }
 #cls-message{
@@ -325,7 +324,8 @@ cursor: pointer;
 }
 
 .btn-cancel{
-  background: rgb(187, 133, 112);
+  background: whitesmoke;
+  border:2px rgb(187, 133, 112) solid;
 }
 #undo{
   width: 12%;
