@@ -6,6 +6,13 @@ const draft = document.getElementById('drf');
 const read = document.getElementById('read');
 const backInbox = document.getElementById('btn-back');
 
+function act() {
+  inbox.style.color = 'greenyellow';
+  inbox.style.background = 'linear-gradient(rgba(140, 153, 142, 0.2),rgba(0, 0, 0, 0.5))';
+  inbox.style.borderTopRightRadius = '20px';
+  inbox.style.borderBottomRightRadius = '20px';
+}
+
 inbox.addEventListener('click', () => {
   document.getElementById('inbox').style.display = 'block';
   document.getElementById('sent').style.display = 'none';
