@@ -252,8 +252,9 @@ margin: auto;
 #txt-msg{
   color: black;
   width: 90%;
-height: 70%;
-border-bottom: rgb(201, 216, 166) 2px solid;
+  height: 70%;
+  border-bottom: rgb(201, 216, 166) 2px solid;
+  resize: none;
 }
 .btn-success{
   background: rgb(0, rgb(30, 56, 30), blue);
