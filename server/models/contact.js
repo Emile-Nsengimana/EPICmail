@@ -9,7 +9,7 @@ const contacts = [
     contactNo: 2,
     firstName: 'Jack',
     lastName: 'Shema',
-    email: 'jack@epicmail.rw',
+    email: 'shema@epicmail.rw',
   },
   {
     contactNo: 3,
