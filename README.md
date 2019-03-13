@@ -44,6 +44,7 @@ npm test
 | /api/v1/contacts/:email | GET | display a specific contact |
 | /api/v1/contacts/:email | DELETE | remove a specific contact |
 | /api/v1/contacts | POST | add a new contact |
+| /api/v1/users | POST | add a new user |
 | /api/v1/users | GET | display all users |
 | /api/v1/users/:email | GET | display a specific user |
 | /api/v1/users/:email | DELETE | remove a specific user |
