@@ -1,20 +1,17 @@
 [![Build Status](https://travis-ci.com/Emile-Nsengimana/EPICmail.svg?branch=develop)](https://travis-ci.com/Emile-Nsengimana/EPICmail) [![Coverage Status](https://coveralls.io/repos/github/Emile-Nsengimana/EPICmail/badge.svg?branch=challenge-ii)](https://coveralls.io/github/Emile-Nsengimana/EPICmail?branch=challenge-ii)
 # EPICmail
 Is a web app that helps people exchange messages/information over the internet.
-
 ### User interface (UI)
 * html
 * css
 * javascript
 #### UI template(gh-pages): https://emile-nsengimana.github.io/EPICmail/UI
 #### Heroku: https://andela-epicmail.herokuapp.com/
-
 ### Requirements
 
 - `Nodejs` - a JavaScript run-time environment that executes JavaScript code outside of a browser
 - `NPM` - a package manager for the JavaScript programming language
 - `Git` - version-control system for tracking changes in source code during software development
-
 ### SETUP
 First clone it to your machine:
 ```
