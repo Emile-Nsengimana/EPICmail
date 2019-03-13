@@ -13,6 +13,7 @@ const messa = document.getElementById('message');
 btnSignup.addEventListener('click', () => {
   signin.style.display = 'none';
   signup.style.display = 'block';
+  document.getElementById('info').style.display = 'none';
 });
 
 btnReset.addEventListener('click', () => {
