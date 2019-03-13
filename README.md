@@ -6,11 +6,8 @@ Is a web app that helps people exchange messages/information over the internet.
 * html
 * css
 * javascript
-### UI template(gh-pages)
-https://emile-nsengimana.github.io/EPICmail/UI
-
-### Heroku
-https://andela-epicmail.herokuapp.com/
+#### UI template(gh-pages): https://emile-nsengimana.github.io/EPICmail/UI
+#### Heroku: https://andela-epicmail.herokuapp.com/
 
 ### Requirements
 
@@ -55,4 +52,4 @@ npm test
 | /api/v1/users/:email | DELETE | remove a specific user |
 
 ### HOW CAN IT BE MANUAL TESTED
-- Use [postman](https://www.getpostman.com/)to test out the API endpoints
+- Use [postman](https://www.getpostman.com/downloads/) to test out the API endpoints
