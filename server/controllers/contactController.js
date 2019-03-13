@@ -4,28 +4,28 @@ import schema from './validate/contactSchema';
 class contactController {
   // ================================= ADD CONTACT =============================
   static addContact(req, res) {
-    const no = contacts.length + 1;
+    const contactNo = contacts.length + 1;
     const {
       firstName,
       lastName,
       email,
     } = req.body;
     const newContact = schema.validate({
-      no,
+      contactNo,
       firstName,
       lastName,
       email,
     });
     if (!newContact.error) {
-      contacts.push(newContact);
-      return res.status(200).json({
-        status: 200,
+      contacts.push(newContact.value);
+      return res.status(201).json({
+        status: 201,
         data: [newContact.value],
       });
     }
-    return res.status(404).json({
-      status: 404,
-      data: newContact.error.details[0].message.replace('"', ' ').replace('"', ''),
+    return res.status(400).json({
+      status: 400,
+      data: [newContact.error.details[0].message.replace('"', ' ').replace('"', '')],
     });
   }
 
@@ -61,12 +61,12 @@ class contactController {
       contacts.pop(contact);
       return res.status(200).json({
         status: 200,
-        data: 'contact removed',
+        data: ['contact removed successful'],
       });
     }
     return res.status(404).json({
       status: 404,
-      data: 'contact doesn\'t exist',
+      data: [`contact with email: ${email} does not exist`],
     });
   }
 }

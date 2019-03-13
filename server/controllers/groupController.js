@@ -1,17 +1,18 @@
 import group from '../models/group';
+import schema from './validate/groupSchema';
 
 class groupController {
   static addGroup(req, res) {
-    const { name } = req.body;
-    const no = group.length + 1;
-    const newGroup = {
-      no,
-      name,
-    };
-    group.push(newGroup);
-    return res.status(200).json({
-      status: 200,
-      data: newGroup,
+    const { groupName } = req.body;
+    const groupNo = group.length + 1;
+    const newGroup = schema.validate({
+      groupNo,
+      groupName,
+    });
+    group.push(newGroup.value);
+    return res.status(201).json({
+      status: 201,
+      data: newGroup.value,
     });
   }
 
@@ -23,11 +24,11 @@ class groupController {
   }
 
   static getThisGroups(req, res) {
-    const thatGroup = group.find(gr => gr.name === req.params.name);
-    if (thatGroup) {
+    const userGroup = group.find(gr => gr.name === req.params.name);
+    if (userGroup) {
       return res.status(200).json({
         status: 200,
-        data: thatGroup,
+        data: userGroup,
       });
     }
     return res.status(404).json({
@@ -37,17 +38,17 @@ class groupController {
   }
 
   static removeGroup(req, res) {
-    const chk = group.find(g => g.name === req.params.name);
-    if (chk) {
-      group.pop(chk);
+    const groupToRemove = group.find(g => g.groupName === req.params.groupName);
+    if (groupToRemove) {
+      group.pop(groupToRemove);
       return res.status(200).json({
         status: 200,
-        data: ['group removed'],
+        data: [`${req.params.groupName} removed successful!`],
       });
     }
     return res.status(404).json({
       status: 404,
-      data: [' group not found'],
+      data: [`group (${req.params.groupName}) does not exist!`],
     });
   }
 }

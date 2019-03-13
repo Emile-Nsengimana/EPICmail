@@ -1,6 +1,6 @@
 const messages = [
   {
-    id: 1,
+    messageId: 1,
     createdOn: '12-03-2019',
     subject: 'Final year report',
     message: 'The final report will be available next week',
@@ -8,7 +8,7 @@ const messages = [
     status: 'read',
   },
   {
-    id: 2,
+    messageId: 2,
     createdOn: '12-03-2019',
     subject: 'Student association',
     message: 'You are invited to the student association on 23rd march, 2020',
@@ -16,7 +16,7 @@ const messages = [
     status: 'unread',
   },
   {
-    id: 3,
+    messageId: 3,
     createdOn: '12-03-2019',
     subject: 'Final year report',
     message: 'The final report will be available next week',

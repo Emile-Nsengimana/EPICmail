@@ -15,7 +15,7 @@ class messageController {
   // ============================================= ADD MESSAGE =============================
 
   static addMessage(req, res) {
-    const id = messages.length + 1;
+    const messageId = messages.length + 1;
     const createdOn = moment.utc().format();
     const {
       subject,
@@ -24,7 +24,7 @@ class messageController {
       status,
     } = req.body;
     const newMessage = schema.validate({
-      id,
+      messageId,
       subject,
       message,
       parentMessageId,
@@ -32,26 +32,26 @@ class messageController {
       status,
     });
     if (!newMessage.error) {
-      messages.push(newMessage);
-      return res.status(200).json({
-        status: 200,
+      messages.push(newMessage.value);
+      return res.status(201).json({
+        status: 201,
         data: [newMessage.value],
       });
     }
-    return res.status(404).json({
-      status: 404,
+    return res.status(400).json({
+      status: 400,
       data: [newMessage.error.details[0].message.replace('"', '').replace('"', '')],
     });
   }
   // ============================================= DELETE MESSAGE =============================
 
   static removeMessage(req, res) {
-    const msg = messages.find(ct => ct.id === parseInt(req.params.id, 10));
-    if (msg) {
-      messages.pop(msg);
+    const messageToRemove = messages.find(msg => msg.id === parseInt(req.params.id, 10));
+    if (messageToRemove) {
+      messages.pop(messageToRemove);
       return res.status(200).json({
         status: 200,
-        data: 'message removed',
+        data: ['message removed'],
       });
     }
     return res.status(404).json({
@@ -62,79 +62,79 @@ class messageController {
   // ============================================= UNREAD MESSAGES ==============================
 
   static unreadMessage(req, res) {
-    const unreads = [];
+    const unreadMessage = [];
     for (let i = 0; i < messages.length; i += 1) {
       if (messages[i].status === 'unread') {
-        unreads.push(messages[i]);
+        unreadMessage.push(messages[i]);
       }
     }
     return res.status(200).json({
       status: 200,
-      data: unreads,
+      data: unreadMessage,
     });
   }
   //   ========================================== READ MESSAGES =================================
 
   static readMessage(req, res) {
-    const reads = [];
+    const readMessage = [];
     for (let i = 0; i < messages.length; i += 1) {
       if (messages[i].status === 'read') {
-        reads.push(messages[i]);
+        readMessage.push(messages[i]);
       }
     }
     return res.status(200).json({
       status: 200,
-      data: reads,
+      data: readMessage,
     });
   }
   //   ========================================== SENT MESSAGES =================================
 
   static sentMessage(req, res) {
-    const sid = parseInt(req.params.senderId, 10);
-    const viewMsg = [];
+    const senderId = parseInt(req.params.senderId, 10);
+    const messageSent = [];
     for (let i = 0; i < messages.length; i += 1) {
-      if (sents[i].senderId === sid) {
+      if (sents[i].senderId === senderId) {
         for (let j = 0; j < messages.length; j += 1) {
-          if (messages[j].id === sents[i].messageId) {
-            viewMsg.push(messages[j]);
+          if (messages[j].messageId === sents[i].messageId) {
+            messageSent.push(messages[j]);
           }
         }
       }
     }
-    if (viewMsg.length === 0) {
-      return res.status(400).json({
+    if (messageSent.length === 0) {
+      return res.status(404).json({
         status: 404,
         data: 'no messages sent for the user with that id',
       });
     }
     return res.status(200).json({
       status: 200,
-      data: viewMsg,
+      data: messageSent,
     });
   }
 
   //   ========================================== INBOX MESSAGES =================================
   static inboxMessage(req, res) {
-    const sid = parseInt(req.params.receiverId, 10);
-    const inboxMsg = [];
+    const receiverId = parseInt(req.params.receiverId, 10);
+    const inboxMessage = [];
     for (let i = 0; i < messages.length; i += 1) {
-      if (inbox[i].receiverId === sid) {
+      if (inbox[i].receiverId === receiverId) {
         for (let j = 0; j < messages.length; j += 1) {
-          if (messages[j].id === inbox[i].messageId) {
-            inboxMsg.push(messages[j]);
+          if (messages[j].messageId === inbox[i].messageId) {
+            inboxMessage.push(messages[j]);
           }
         }
       }
     }
-    if (inboxMsg.length === 0) {
-      return res.status(400).json({
-        status: 400,
+    if (inboxMessage.length === 0) {
+      return res.status(404).json({
+        status: 404,
         data: 'no inbox messages for the user with that id',
       });
     }
     return res.status(200).json({
       status: 200,
-      data: inboxMsg,
+      data: inboxMessage,
     });
   }
 }
