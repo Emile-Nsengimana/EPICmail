@@ -22,7 +22,7 @@ describe('Message tests', () => {
       .send(message)
       .end((err, res) => {
         chai.expect(res.body).to.be.a('object');
-        chai.expect(res.statusCode).to.be.equal(200);
+        chai.expect(res.statusCode).to.be.equal(201);
       });
     done();
   });

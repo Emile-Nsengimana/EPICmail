@@ -1,6 +1,6 @@
 const users = [
   {
-    id: 1,
+    userid: 1,
     firstName: 'Emile',
     lastName: 'Nsengimana',
     email: 'emile@epicmail.rw',
@@ -8,7 +8,7 @@ const users = [
     phoneNo: '072111111111',
   },
   {
-    id: 2,
+    userid: 2,
     firstName: 'John',
     lastName: 'Freedom',
     email: 'fred@epicmail.rw',
@@ -16,7 +16,7 @@ const users = [
     phoneNo: '0731234567',
   },
   {
-    id: 3,
+    userid: 3,
     firstName: 'Emile',
     lastName: 'Nsengimana',
     email: 'emile@epicmail.rw',

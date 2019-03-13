@@ -1,4 +1,3 @@
-// import moment from 'moment';
 import users from '../models/user';
 import schema from './validate/userSchema';
 
@@ -21,24 +20,23 @@ class userController {
       email,
       password,
       phoneNo,
-      // created_at: moment.utc().format(),
     });
     if (!newUser.error) {
-      users.push(newUser);
-      return res.status(200).json({
-        status: 200,
+      users.push(newUser.value);
+      return res.status(201).json({
+        status: 201,
         data: [newUser.value],
       });
     }
-    return res.status(404).json({
-      status: 404,
+    return res.status(400).json({
+      status: 400,
       data: [newUser.error.details[0].message.replace('"', ' ').replace('"', '')],
     });
   }
 
   // ================================== GET ALL USER =====================================
   static getUsers(req, res) {
-    return res.json({
+    return res.status(200).json({
       status: 200,
       data: users,
     });
@@ -47,12 +45,12 @@ class userController {
   // ================================== GET A SPECIFIC USER =====================================
   static getUser(req, res) {
     const { email } = req.params;
-    const usr = users.find(c => c.email === email);
+    const searchUser = users.find(c => c.email === email);
 
-    if (usr) {
+    if (searchUser) {
       return res.status(200).json({
         status: 200,
-        data: usr,
+        data: searchUser,
       });
     }
     return res.status(404).json({
@@ -64,9 +62,9 @@ class userController {
   // ================================== DELETE A USER =====================================
   static removeUser(req, res) {
     const { email } = req.params;
-    const u = users.find(z => z.email === email);
-    if (u) {
-      users.pop(u);
+    const userToRemove = users.find(user => user.email === email);
+    if (userToRemove) {
+      users.pop(userToRemove);
       return res.status(200).json({
         status: 200,
         info: 'user removed',

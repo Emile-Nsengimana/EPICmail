@@ -1,18 +1,18 @@
 const contacts = [
   {
-    id: 1,
+    contactNo: 1,
     firstName: 'Emile',
     lastName: 'Nsengimana',
     email: 'emile@epicmail.rw',
   },
   {
-    id: 2,
+    contactNo: 2,
     firstName: 'Jack',
     lastName: 'Shema',
     email: 'jack@epicmail.rw',
   },
   {
-    id: 3,
+    contactNo: 3,
     firstName: 'Suzan',
     lastName: 'Uwase',
     email: 'suzan@epicmail.rw',
