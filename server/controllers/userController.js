@@ -40,7 +40,6 @@ class userController {
       });
     }
     if (newUser.error.details[0].context.key === 'phoneNo') {
-      console.log(newUser.error.details[0].message);
       return res.status(400).json({
         status: 400,
         data: ['invalid phone number'],
