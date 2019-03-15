@@ -36,7 +36,7 @@ class messageController {
       messages.push(newMessage.value);
       return res.status(201).json({
         status: 201,
-        data: [newMessage.value],
+        data: newMessage.value,
       });
     }
     return res.status(400).json({

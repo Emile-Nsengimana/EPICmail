@@ -5,7 +5,6 @@ import chaiHttp from 'chai-http';
 import uuidv1 from 'uuid/v1';
 import server from '../../server';
 
-const should = chai.should();
 chai.use(chaiHttp);
 
 describe('User tests', () => {
@@ -23,6 +22,11 @@ describe('User tests', () => {
       .send(user)
       .end((err, res) => {
         chai.expect(res.status).to.be.equal(201);
+        res.body.data.should.have.property('userId');
+        res.body.data.should.have.property('firstName');
+        res.body.data.should.have.property('lastName');
+        res.body.data.should.have.property('email');
+        res.body.data.should.have.property('password');
       });
     done();
   });
@@ -33,6 +37,7 @@ describe('User tests', () => {
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
+        res.body.data.should.be.a('array');
         done();
       });
   });
@@ -42,6 +47,7 @@ describe('User tests', () => {
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
+        res.body.data.should.be.a('array');
         done();
       });
   });
@@ -60,6 +66,7 @@ describe('User tests', () => {
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(200);
         chai.expect(res.body).to.be.a('object');
+        res.body.info.should.be.a('string');
         done();
       });
   });

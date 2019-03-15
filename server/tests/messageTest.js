@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 describe('Message tests', () => {
   it('should be able to add a message', (done) => {
     const message = {
-      id: 1,
+      messageId: 1,
       createdOn: '12-03-2019',
       subject: 'Final year report',
       message: 'The final report will be available next week',
@@ -23,6 +23,12 @@ describe('Message tests', () => {
       .end((err, res) => {
         chai.expect(res.body).to.be.a('object');
         chai.expect(res.statusCode).to.be.equal(201);
+        res.body.data.should.have.property('messageId');
+        res.body.data.should.have.property('createdOn');
+        res.body.data.should.have.property('subject');
+        res.body.data.should.have.property('message');
+        res.body.data.should.have.property('parentMessageId');
+        res.body.data.should.have.property('status');
       });
     done();
   });
