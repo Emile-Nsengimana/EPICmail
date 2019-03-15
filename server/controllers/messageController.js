@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import moment from 'moment';
 import messages from '../models/message';
 import sents from '../models/sent';
@@ -46,7 +47,7 @@ class messageController {
   // ============================================= DELETE MESSAGE =============================
 
   static removeMessage(req, res) {
-    const messageToRemove = messages.find(msg => msg.id === parseInt(req.params.id, 10));
+ const messageToRemove = messages.find(msg => msg.messageId === parseInt(req.params.messageId, 10));
     if (messageToRemove) {
       messages.pop(messageToRemove);
       return res.status(200).json({
@@ -115,10 +116,10 @@ class messageController {
 
   //   ========================================== INBOX MESSAGES =================================
   static inboxMessage(req, res) {
-    const receiverId = parseInt(req.params.receiverId, 10);
+    const receiverNo = parseInt(req.params.receiverId, 10);
     const inboxMessage = [];
     for (let i = 0; i < messages.length; i += 1) {
-      if (inbox[i].receiverId === receiverId) {
+      if (inbox[i].receiverId === receiverNo) {
         for (let j = 0; j < messages.length; j += 1) {
           if (messages[j].messageId === inbox[i].messageId) {
             inboxMessage.push(messages[j]);

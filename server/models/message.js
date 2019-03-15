@@ -16,7 +16,7 @@ const messages = [
     status: 'unread',
   },
   {
-    messageId: 3,
+    messageId: 2,
     createdOn: '12-03-2019',
     subject: 'Final year report',
     message: 'The final report will be available next week',

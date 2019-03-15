@@ -5,7 +5,7 @@ const inbox = [
     createdOn: '12-12-2000',
   },
   {
-    receiverId: 1,
+    receiverId: 2,
     messageId: 2,
     createdOn: '12-12-2000',
   }, {

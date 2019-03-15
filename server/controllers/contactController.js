@@ -1,17 +1,18 @@
+import uuidv1 from 'uuid/v1';
 import contacts from '../models/contact';
 import schema from './validate/contactSchema';
 
 class contactController {
   // ================================= ADD CONTACT =============================
   static addContact(req, res) {
-    const contactNo = contacts.length + 1;
+    const contactId = uuidv1();
     const {
       firstName,
       lastName,
       email,
     } = req.body;
     const newContact = schema.validate({
-      contactNo,
+      contactId,
       firstName,
       lastName,
       email,
