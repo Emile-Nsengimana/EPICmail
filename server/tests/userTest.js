@@ -2,26 +2,27 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import uuidv1 from 'uuid/v1';
 import server from '../../server';
 
-chai.should();
+const should = chai.should();
 chai.use(chaiHttp);
 
 describe('User tests', () => {
   it('should be able to add a user', (done) => {
     const user = {
+      userId: uuidv1(),
       firstName: 'Peter',
       lastName: 'Mark',
       email: 'pete@epicmail.rw',
       password: 'password',
-      phoneNo: '0781234567',
+      phoneNo: 781234567,
     };
     chai.request(server)
       .post('/api/v1/users')
       .send(user)
       .end((err, res) => {
-        chai.expect(res.body).to.be.a('object');
-        chai.expect(res.statusCode).to.be.equal(201);
+        chai.expect(res.status).to.be.equal(201);
       });
     done();
   });

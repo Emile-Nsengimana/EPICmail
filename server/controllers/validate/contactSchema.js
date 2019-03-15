@@ -1,7 +1,7 @@
 import joi from 'joi';
 
 const contactSchema = joi.object().keys({
-  contactNo: joi.number().required(),
+  contactId: joi.string().required(),
   firstName: joi.string().alphanum().min(3).max(15)
     .required(),
   lastName: joi.string().alphanum().min(3).max(25)

@@ -1,12 +1,13 @@
+import uuidv1 from 'uuid/v1';
 import group from '../models/group';
 import schema from './validate/groupSchema';
 
 class groupController {
   static addGroup(req, res) {
     const { groupName } = req.body;
-    const groupNo = group.length + 1;
+    const groupId = uuidv1();
     const newGroup = schema.validate({
-      groupNo,
+      groupId,
       groupName,
     });
     group.push(newGroup.value);
@@ -24,7 +25,7 @@ class groupController {
   }
 
   static getThisGroups(req, res) {
-    const userGroup = group.find(gr => gr.name === req.params.name);
+    const userGroup = group.find(gr => gr.groupName === req.params.groupName);
     if (userGroup) {
       return res.status(200).json({
         status: 200,

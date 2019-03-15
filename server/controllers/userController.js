@@ -1,10 +1,11 @@
+import uuidv1 from 'uuid/v1';
 import users from '../models/user';
 import schema from './validate/userSchema';
 
 class userController {
   // ================================== ADD USER =====================================
   static addUser(req, res) {
-    const userId = users.length + 1;
+    const userId = uuidv1();
     const {
       firstName,
       lastName,
@@ -12,6 +13,15 @@ class userController {
       password,
       phoneNo,
     } = req.body;
+
+    for (let i = 0; i < users.length; i += 1) {
+      if (users[i].email === email) {
+        return res.status(400).json({
+          status: 400,
+          message: ['email address already used, please try another one'],
+        });
+      }
+    }
 
     const newUser = schema.validate({
       userId,
@@ -21,11 +31,18 @@ class userController {
       password,
       phoneNo,
     });
+
     if (!newUser.error) {
       users.push(newUser.value);
       return res.status(201).json({
         status: 201,
         data: [newUser.value],
+      });
+    }
+    if (newUser.error.details[0].context.key === 'phoneNo') {
+      return res.status(400).json({
+        status: 400,
+        data: ['invalid phone number'],
       });
     }
     return res.status(400).json({
@@ -45,12 +62,12 @@ class userController {
   // ================================== GET A SPECIFIC USER =====================================
   static getUser(req, res) {
     const { email } = req.params;
-    const searchUser = users.find(c => c.email === email);
+    const searchedUser = users.find(c => c.email === email);
 
-    if (searchUser) {
+    if (searchedUser) {
       return res.status(200).json({
         status: 200,
-        data: searchUser,
+        data: searchedUser,
       });
     }
     return res.status(404).json({
