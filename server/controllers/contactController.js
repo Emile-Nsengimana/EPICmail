@@ -21,12 +21,12 @@ class contactController {
       contacts.push(newContact.value);
       return res.status(201).json({
         status: 201,
-        data: [newContact.value],
+        data: newContact.value,
       });
     }
     return res.status(400).json({
       status: 400,
-      data: [newContact.error.details[0].message.replace('"', ' ').replace('"', '')],
+      data: newContact.error.details[0].message.replace('"', ' ').replace('"', ''),
     });
   }
 

@@ -30,7 +30,60 @@ describe('User tests', () => {
       });
     done();
   });
-
+  it('should not add a user with used email address', (done) => {
+    const user = {
+      userId: uuidv1(),
+      firstName: 'Peter',
+      lastName: 'Mark',
+      email: 'pete@epicmail.rw',
+      password: 'password',
+      phoneNo: 781234567,
+    };
+    chai.request(server)
+      .post('/api/v1/users')
+      .send(user)
+      .end((err, res) => {
+        chai.expect(res.status).to.be.equal(400);
+        res.body.message.should.be.equal('email address already used, please try another one');
+      });
+    done();
+  });
+  it('should not add a user with an invalid phone number', (done) => {
+    const user = {
+      userId: uuidv1(),
+      firstName: 'Peter',
+      lastName: 'Mark',
+      email: 'peteui@epicmail.rw',
+      password: 'password',
+      phoneNo: '000',
+    };
+    chai.request(server)
+      .post('/api/v1/users')
+      .send(user)
+      .end((err, res) => {
+        chai.expect(res.status).to.be.equal(400);
+        res.body.message.should.be.equal('invalid phone number');
+      });
+    done();
+  });
+  it('should not add a user with any invalid informations', (done) => {
+    const user = {
+      userId: uuidv1(),
+      firstName: 'Peter@',
+      lastName: 'Mark',
+      email: 'peteuiz@epicmail.rw',
+      password: 'password',
+      phoneNo: 1234567891,
+    };
+    chai.request(server)
+      .post('/api/v1/users')
+      .send(user)
+      .end((err, res) => {
+        chai.expect(res.status).to.be.equal(400);
+        res.body.message.should.be.a('string');
+      });
+    done();
+  });
   it('should get all users', (done) => {
     chai.request(server)
       .get('/api/v1/users')

@@ -41,7 +41,7 @@ class messageController {
     }
     return res.status(400).json({
       status: 400,
-      data: [newMessage.error.details[0].message.replace('"', '').replace('"', '')],
+      data: newMessage.error.details[0].message.replace('"', '').replace('"', ''),
     });
   }
   // ============================================= DELETE MESSAGE =============================
@@ -105,7 +105,7 @@ class messageController {
     if (messageSent.length === 0) {
       return res.status(404).json({
         status: 404,
-        data: 'no messages sent for the user with that id',
+        message: 'no messages sent for the user with that id',
       });
     }
     return res.status(200).json({
@@ -130,7 +130,7 @@ class messageController {
     if (inboxMessage.length === 0) {
       return res.status(404).json({
         status: 404,
-        data: 'no inbox messages for the user with that id',
+        message: 'no inbox messages for the user with that id',
       });
     }
     return res.status(200).json({
