@@ -18,7 +18,7 @@ class userController {
       if (users[i].email === email) {
         return res.status(400).json({
           status: 400,
-          message: ['email address already used, please try another one'],
+          message: 'email address already used, please try another one',
         });
       }
     }
@@ -36,18 +36,18 @@ class userController {
       users.push(newUser.value);
       return res.status(201).json({
         status: 201,
-        data: [newUser.value],
+        data: newUser.value,
       });
     }
     if (newUser.error.details[0].context.key === 'phoneNo') {
       return res.status(400).json({
         status: 400,
-        data: ['invalid phone number'],
+        message: 'invalid phone number',
       });
     }
     return res.status(400).json({
       status: 400,
-      data: [newUser.error.details[0].message.replace('"', ' ').replace('"', '')],
+      message: newUser.error.details[0].message.replace('"', ' ').replace('"', ''),
     });
   }
 
@@ -67,7 +67,7 @@ class userController {
     if (searchedUser) {
       return res.status(200).json({
         status: 200,
-        data: searchedUser,
+        data: [searchedUser],
       });
     }
     return res.status(404).json({

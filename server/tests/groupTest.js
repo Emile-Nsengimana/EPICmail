@@ -9,16 +9,18 @@ chai.use(chaiHttp);
 
 describe('Group tests', () => {
   it('should be able to create a group', (done) => {
-    const grp = {
-      id: 4,
-      name: 'group 4',
+    const newGroup = {
+      groupId: 4,
+      groupName: 'group 4',
     };
     chai.request(server)
       .post('/api/v1/groups')
-      .send(grp)
+      .send(newGroup)
       .end((err, res) => {
         chai.expect(res.body).to.be.a('object');
         chai.expect(res.statusCode).to.be.equal(201);
+        res.body.data.should.have.property('groupId');
+        res.body.data.should.have.property('groupName');
       });
     done();
   });
