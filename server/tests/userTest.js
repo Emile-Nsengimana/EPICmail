@@ -52,7 +52,7 @@ describe('User tests', () => {
     const user = {
       userId: uuidv1(),
       firstName: 'Peter',
-      lastName: 'Mark',
+      lastName: 'Zack',
       email: 'peteui@epicmail.rw',
       password: 'password',
       phoneNo: '000',
