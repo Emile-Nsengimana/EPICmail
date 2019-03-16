@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/Emile-Nsengimana/EPICmail.svg?branch=develop)](https://travis-ci.com/Emile-Nsengimana/EPICmail) [![Coverage Status](https://coveralls.io/repos/github/Emile-Nsengimana/EPICmail/badge.svg?branch=challenge-ii)](https://coveralls.io/github/Emile-Nsengimana/EPICmail?branch=challenge-ii)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4cec0ec1946e7fa6f62c/maintainability)](https://codeclimate.com/github/Emile-Nsengimana/EPICmail/maintainability)
 # EPICmail
 Is a web app that helps people exchange messages/information over the internet.
 ### User interface (UI)
