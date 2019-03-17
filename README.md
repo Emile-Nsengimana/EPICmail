@@ -7,7 +7,7 @@ Is a web app that helps people exchange messages/information over the internet.
 * `css`
 * `javascript`
 #### UI template(gh-pages): https://emile-nsengimana.github.io/EPICmail/UI
-#### Heroku: https://andela-epicmail.herokuapp.com/
+#### Heroku: https://epicmail-api-endpoint.herokuapp.com
 ### Requirements
 
 - `Nodejs` - a JavaScript run-time environment that executes JavaScript code outside of a browser
