@@ -57,3 +57,17 @@ btnCancelGrp.addEventListener('click', () => {
   document.getElementById('sent').style.background = 'rgba(255, 255, 255, 1)';
   document.getElementById('draft').style.background = 'rgba(255, 255, 255, 0.7)';
 });
+const reply = document.getElementById('btn-reply');
+
+reply.addEventListener('click', () => {
+  document.getElementById('sp').style.display = 'none';
+  document.getElementById('reply').style.display='block';
+});
+document.getElementById('btn-send-reply').addEventListener('click', () => {
+  document.getElementById('read').style.display = 'none';
+
+});
+document.getElementById('btn-cancel-reply').addEventListener('click', () => {
+  document.getElementById('read').style.display = 'none';
+
+});

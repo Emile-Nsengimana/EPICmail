@@ -60,6 +60,10 @@ draft.addEventListener('click', () => {
 
 function readme() {
   read.style.display = 'block';
+  document.getElementById('sp').style.display = 'none';
+  document.getElementById('reply').style.display = 'none';
+  document.getElementById('sp').style.display = 'block';
+
 }
 backInbox.addEventListener('click', () => {
   read.style.display = 'none';

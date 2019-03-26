@@ -60,6 +60,24 @@ font-family: 'Yatra One', cursive;
   width: 80%;
   margin: auto;
 }
+#sp{
+  display: block;
+  padding: 20px;
+}
+#read{
+  display: none;
+  margin:13px 20px 0 0;
+  height: 80vh;
+  width: 82%;
+  border-radius: 4px;
+  background-color:white;
+  float: right;
+  overflow: auto;
+  position: fixed;
+  top: 90px;
+  left: 16.5%;
+  z-index: 1;
+  }
 #inbox{
   display: block;
   margin:13px 20px 0 0;
@@ -74,7 +92,9 @@ font-family: 'Yatra One', cursive;
   left: 16.5%;
   z-index: 1;
 }
-
+#reply{
+  display: none;
+}
 #sent, #draft{
   display: none;
   margin:13px 20px 0 0;
@@ -225,22 +245,7 @@ border-top-right-radius: 10px;
 #message .form-input, #group .form-input{
   color: black;
 }
-#read{
-display: none;
-width: 98vh;
-height: 300px;
-color: black;
-border-radius: 10px;
-background: rgb(255, 255, 255);
-padding-left: 40px;
-padding-top: 20px;
-font-family: Arial, Helvetica, sans-serif;
-font-weight: 700;
-position: absolute;
-top: 30vh;;
-left: 30%;
-z-index: 1;
-}
+
 .btn-compose{
 width: 100%;
   border-radius: 15px;
@@ -264,6 +269,19 @@ width: 100%;
 .form-input{
   width: 90%;
   color: white;
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid rgb(9, 90, 56);
+margin: auto;
+  background: transparent;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 15pt;    
+  padding: 4px;
+}
+.form-input-2{
+  width: 95%;
+  color: rgb(0, 0, 0);
   border: none;
   outline: 0;
   border-bottom: 1px solid rgb(9, 90, 56);
