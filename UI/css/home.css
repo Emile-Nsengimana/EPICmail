@@ -60,8 +60,22 @@ font-family: 'Yatra One', cursive;
   width: 80%;
   margin: auto;
 }
+#inbox{
+  display: block;
+  margin:13px 20px 0 0;
+  height: 80vh;
+  width: 82%;
+  border-radius: 4px;
+  background-color:rgba(0,0 ,0 , 0.8);
+  float: right;
+  overflow: auto;
+  position: fixed;
+  top: 90px;
+  left: 16.5%;
+  z-index: 1;
+}
 
-#sent, #inbox, #draft{
+#sent, #draft{
   display: none;
   margin:13px 20px 0 0;
   height: 80vh;
