@@ -140,14 +140,15 @@ font-size: 14pt;
 @media(max-width: 600px){
   #menu{
     width: 50%;
-    background: rgb(128, 105, 105);
-    height: 55vh;
-    margin-top: 40px;
+    /* background: rgb(128, 105, 105); */
+    height: auto;
+    margin-top: 53px;
   }
-  #inbox{
+  #inbox, #draft{
     width: 100%;
-    margin: auto;
+    margin-right: -800px;
   }
+ 
   td:nth-child(1){
     display: block;
     width: 100%;

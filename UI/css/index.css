@@ -59,33 +59,61 @@ ul li, a{
 .container{
     width: 80%;
     margin: auto;
+    display: flex;
 }
 #overall{
-    margin-top:70px;
     background-color: rgba(0, 0 ,0 , 0.9);
-    margin-top: 130px;
+    margin-top: 87px;
 }
 /* ========================================================= SIGN IN ================================== */
 .control{
     padding: 10px;
-    width: 50%;
+    width: 70%;
+    height: 73vh;
     padding-bottom: 67px;
     margin: auto;
-    
+    flex: 1;
+}
+#info li{
+    margin: 25px;
 }
 .form-control{
     width:50%;
     float: left;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 8px;
+}
+.tophfo-lg{
+    color: rgb(222, 247, 174);
+    font-weight: 800;
+    font-size: 27pt;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 70px; 
+}
+.tophfo{
+    color: rgb(222, 247, 174);
+    font-weight: 800;
+    font-size: 27pt;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px; 
 }
 .hfo{
     color: rgb(222, 247, 174);
     font-weight: 300;
     text-align: center;
     padding-top:10px;
-    margin-bottom: 10px; 
 }
+.hder{
+    color: rgb(222, 247, 174);
+    font-weight: 300;
+    text-align: center;
+    padding:10px;
+    margin-bottom: 10px;
+    float: right;
+}
+
 /* ========================================================= FORM (LABELS & INPUTS) ================================== */
 .form-label{
     font-weight: 500;
@@ -95,9 +123,7 @@ ul li, a{
 }
 .form-input{
     width: 100%;
-    /* height: 20px; */
     color: white;
-    /* border-radius: 12px; */
     border: none;
     outline: 0;
     border-bottom: 1px solid white;
@@ -116,21 +142,16 @@ ul li, a{
     border-radius: 7px;
     height: 37px;
     padding: 10px;    
-    background-color: transparent;
-    border-style: solid;
-    border-color: rgb(33, 90, 71);
+    background-color:  rgb(33, 90, 71);
+    border-style: none;
     color: white;
     outline: none;
 }
 .btn-space{
     width: 70%;
-    margin-left: 12%;
+    margin-left: 12%
 }
-.btn:hover{
-    background-color: rgb(33, 90, 71);
-    outline: 0;
-    border-style: none;
-}
+
 #btn-signup:hover{
     cursor: pointer;
  }
@@ -140,25 +161,34 @@ ul li, a{
  }
  .btn-link{
     font-size: 14pt;
-  font-weight: 400;
+    font-weight: 400;
     background: transparent;
     border: none;
     outline: 0;
     color: rgb(73, 138, 73);
     display: inline;
+    margin-left: 7px;
+}
+#info{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 17pt;
+    color: whitesmoke;
+    width: 100%;
+    width: 50%;
+    padding-top: 120px;
 }
 /* ========================================================= SIGN UP ================================== */
 #signup{
     display: none;
-    width: 80%;
+    width: 70%;
     margin: auto;
     padding-bottom: 6px;
+    height: 84.7vh;
 }
 .form-input-md{
-    width: 90%;
-    /* height: 20px; */
+    width: 100%;
     color: white;
-    /* border-radius: 12px; */
     border: none;
     outline: 0;
     border-bottom: 1px solid white;
@@ -167,7 +197,7 @@ ul li, a{
     font-weight: 500;
     font-size: 15pt;    
     padding: 4px;
-    margin-right: 10px;
+    margin-right: 80px;
     text-align: center;
 }
 .form-label-md{
