@@ -1,18 +1,20 @@
+import uuidv1 from 'uuid/v1';
+
 const contacts = [
   {
-    id: 1,
+    contactId: uuidv1(),
     firstName: 'Emile',
     lastName: 'Nsengimana',
     email: 'emile@epicmail.rw',
   },
   {
-    id: 2,
+    contactId: uuidv1(),
     firstName: 'Jack',
     lastName: 'Shema',
-    email: 'jack@epicmail.rw',
+    email: 'shema@epicmail.rw',
   },
   {
-    id: 3,
+    contactId: uuidv1(),
     firstName: 'Suzan',
     lastName: 'Uwase',
     email: 'suzan@epicmail.rw',

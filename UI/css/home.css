@@ -60,7 +60,9 @@ font-family: 'Yatra One', cursive;
   width: 80%;
   margin: auto;
 }
-#inbox{
+
+#sent, #inbox, #draft{
+  display: none;
   margin:13px 20px 0 0;
   height: 80vh;
   width: 82%;
@@ -68,47 +70,19 @@ font-family: 'Yatra One', cursive;
   background-color:rgba(0,0 ,0 , 0.8);
   float: right;
   overflow: auto;
-}
-#sent{
-  display: none;
-  margin:13px 20px 0 0;
-  height: 80vh;
-  width: 82%;
-  border-radius: 4px;
-  background-color: rgba(218, 230, 238, 0.7);
-  float: right;
-  overflow: auto;
   position: fixed;
   top: 90px;
   left: 16.5%;
   z-index: 1;
 }
-#sent td{
-  color: black;
-}
-#draft{
-  display: none;
-  margin:13px 20px 0 0;
-  height: 80vh;
-  width: 82%;
-  border-radius: 4px;
-  background-color:rgba(255, 255, 255, 0.7);
-  float: right;
-  overflow: auto;
-  position: fixed;
-  top: 90px;
-  left: 16.5%;
-  z-index: 1;
-}
-#draft td{
-  color: black;
-}
+
 td{
   width: 10%;
   padding: 10px;
   color: white;
   border-bottom: 1px rgba(199, 199, 199, 0.4) solid;
   cursor: pointer;
+  font-size: 14pt;
 }
 
 tr:hover{
@@ -117,7 +91,6 @@ tr:hover{
 thead{
   font-weight: 700;
   font-size: 15pt;
-  text-align: center;
 }
 #btn-send{
 font-size: 14pt;

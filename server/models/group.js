@@ -1,15 +1,17 @@
+import uuidv1 from 'uuid/v1';
+
 const group = [
   {
-    id: 1,
-    name: 'Group 1',
+    groupId: uuidv1(),
+    groupName: 'Group 1',
   },
   {
-    id: 2,
-    name: 'Group 2',
+    groupId: uuidv1(),
+    groupName: 'Group 2',
   },
   {
-    id: 3,
-    name: 'Group 3',
+    groupId: uuidv1(),
+    groupName: 'Group 3',
   },
 ];
 export default group;

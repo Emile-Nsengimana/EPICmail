@@ -9,16 +9,18 @@ chai.use(chaiHttp);
 
 describe('Group tests', () => {
   it('should be able to create a group', (done) => {
-    const grp = {
-      id: 4,
-      name: 'group 4',
+    const newGroup = {
+      groupId: 4,
+      groupName: 'group 4',
     };
     chai.request(server)
       .post('/api/v1/groups')
-      .send(grp)
+      .send(newGroup)
       .end((err, res) => {
         chai.expect(res.body).to.be.a('object');
-        chai.expect(res.statusCode).to.be.equal(200);
+        chai.expect(res.statusCode).to.be.equal(201);
+        res.body.data.should.have.property('groupId');
+        res.body.data.should.have.property('groupName');
       });
     done();
   });
@@ -42,7 +44,7 @@ describe('Group tests', () => {
   });
   it('should not be able to display unexisting group', (done) => {
     chai.request(server)
-      .get('/api/v1/groups/Group 17')
+      .get('/api/v1/groups/Group 99')
       .end((err, res) => {
         chai.expect(res.statusCode).to.be.equal(404);
         chai.expect(res.body).to.be.a('object');

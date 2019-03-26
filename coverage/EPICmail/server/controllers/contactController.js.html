@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">96.15% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>25/26</span>
+        <span class='fraction'>27/27</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>5/6</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.45% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>21/22</span>
+        <span class='fraction'>23/23</span>
       </div>
     </div>
     <p class="quiet">
@@ -120,32 +120,34 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,33 +196,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import contacts from '../models/contact';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import uuidv1 from 'uuid/v1';
+import contacts from '../models/contact';
 import schema from './validate/contactSchema';
 &nbsp;
 class contactController {
   // ================================= ADD CONTACT =============================
   static addContact(req, res) {
-    const no = contacts.length + 1;
+    const contactId = uuidv1();
     const {
       firstName,
       lastName,
       email,
     } = req.body;
     const newContact = schema.validate({
-      no,
+      contactId,
       firstName,
       lastName,
       email,
     });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (!newContact.error) {
-      contacts.push(newContact);
-      return res.status(200).json({
-        status: 200,
-        data: [newContact.value],
+    if (!newContact.error) {
+      contacts.push(newContact.value);
+      return res.status(201).json({
+        status: 201,
+        data: newContact.value,
       });
     }
-<span class="cstat-no" title="statement not covered" >    return r</span>es.status(404).json({
-      status: 404,
+    return res.status(400).json({
+      status: 400,
       data: newContact.error.details[0].message.replace('"', ' ').replace('"', ''),
     });
   }
@@ -257,12 +260,12 @@ class contactController {
       contacts.pop(contact);
       return res.status(200).json({
         status: 200,
-        data: 'contact removed',
+        data: ['contact removed successful'],
       });
     }
     return res.status(404).json({
       status: 404,
-      data: 'contact doesn\'t exist',
+      data: [`contact with email: ${email} does not exist`],
     });
   }
 }
@@ -275,9 +278,21 @@ export default contactController;
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 10 2019 00:55:29 GMT+0200 (Central Africa Time)
 =======
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 11:38:36 GMT+0200 (Central Africa Time)
+>>>>>>> challenge-ii
+=======
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Mar 14 2019 00:32:10 GMT+0200 (Central Africa Time)
+>>>>>>> challenge-ii
+=======
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 15 2019 07:58:27 GMT+0200 (Central Africa Time)
+>>>>>>> challenge-ii
+=======
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Mar 16 2019 20:42:46 GMT+0200 (Central Africa Time)
 >>>>>>> challenge-ii
 </div>
 </div>

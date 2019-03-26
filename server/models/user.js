@@ -1,6 +1,8 @@
+import uuidv1 from 'uuid/v1';
+
 const users = [
   {
-    id: 1,
+    userid: uuidv1(),
     firstName: 'Emile',
     lastName: 'Nsengimana',
     email: 'emile@epicmail.rw',
@@ -8,7 +10,7 @@ const users = [
     phoneNo: '072111111111',
   },
   {
-    id: 2,
+    userid: uuidv1(),
     firstName: 'John',
     lastName: 'Freedom',
     email: 'fred@epicmail.rw',
@@ -16,7 +18,7 @@ const users = [
     phoneNo: '0731234567',
   },
   {
-    id: 3,
+    userid: uuidv1(),
     firstName: 'Emile',
     lastName: 'Nsengimana',
     email: 'emile@epicmail.rw',

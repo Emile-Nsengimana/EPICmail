@@ -25,12 +25,12 @@ router.get('/api/v1/messages/unread', messageController.unreadMessage);
 router.get('/api/v1/messages/read', messageController.readMessage);
 router.get('/api/v1/messages/sent/:senderId', messageController.sentMessage);
 router.get('/api/v1/messages/inbox/:receiverId', messageController.inboxMessage);
-router.delete('/api/v1/messages/:id', messageController.removeMessage);
+router.delete('/api/v1/messages/:messageId', messageController.removeMessage);
 
 // =====================================  GROUP ROUTES =======================================
 router.post('/api/v1/groups', groupController.addGroup);
 router.get('/api/v1/groups', groupController.showGroups);
-router.get('/api/v1/groups/:name', groupController.getThisGroups);
-router.delete('/api/v1/groups/:name', groupController.removeGroup);
+router.get('/api/v1/groups/:groupName', groupController.getThisGroups);
+router.delete('/api/v1/groups/:groupName', groupController.removeGroup);
 
 export default router;
